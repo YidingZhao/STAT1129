@@ -1,0 +1,15 @@
+color=["black","white","blue"]
+print(color)
+
+
+list=[]
+for i in range(0,6):
+    list.append(i)
+print(list)
+list.remove(2)
+print(list)
+list.insert(2,2.0)
+print(list)
+print(len(list))
+print(max(list))
+print(min(list))
