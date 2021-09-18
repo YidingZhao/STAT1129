@@ -1,6 +1,10 @@
 color=["black","white","blue"]
 print(color)
 
+nums=list(range(30, 61, 3))
+print(nums)
+nums_tuple=tuple(range(30, 61, 3))
+print(nums_tuple)
 
 list=[]
 for i in range(0,6):
@@ -13,3 +17,8 @@ print(list)
 print(len(list))
 print(max(list))
 print(min(list))
+
+m=list(range(11))
+print(m)
+n=sum(m)
+print(n)
