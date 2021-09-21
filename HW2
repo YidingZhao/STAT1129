@@ -1,0 +1,54 @@
+i=0
+while i<10:
+    print(i)
+    i += 1
+    if i == 5:
+        break
+
+i=0
+while i<5:
+    print(i)
+    i +=1
+else:
+print(i, "is not less than 5")
+
+fruits=["strawberry","mango","apple"]
+for fruit in fruits:
+    if fruit == "apple":
+        break
+    print("I like", fruit)
+print("apple is really a fruit?")
+
+n=30
+sum=0
+i=1
+while i<=n:
+    sum=sum+i
+    i=i+1
+print("The sum is", sum)
+
+weather={'Sunny':'play','Rainy':'watch TV','Cloudy':'walk','Snowy':'ski'}
+for key, value in weather.items():
+    print("When",key, "let us", value)
+print(weather)
+
+weather={'Sunny':'play','Rainy':'watch TV','Cloudy':'walk'}
+for key, value in weather.items():
+    if key =='Sunny':
+        print("When",key, "let us", value)
+    elif key =='Rainy':
+        print("When",key, "let us", value)
+    else:
+        print("When",key, "let us", value)
+
+grade=100
+if grade >= 90:
+    print("A")
+elif grade >= 80:
+    print("B")
+elif grade >= 70:
+    print("C")
+elif grade >= 60:
+    print("D")
+else:
+print("F")
