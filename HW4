@@ -1,0 +1,40 @@
+#1
+import numpy as np
+integers=np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12]])
+print(integers*2)
+print(integers.ndim)
+print(integers.shape)
+
+#2
+import numpy as np
+integers=np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12]])
+for row in integers:
+    for column in row:
+        print(column, end=' ')
+    print()
+for i in integers.flat:
+    print(i,end=' ')
+    
+#3
+import matplotlib.pyplot as plt
+import numpy as np
+xpoints=np.array([1,6])
+ypoints=np.array([5,10])
+plt.plot(xpoints, ypoints)
+plt.show()
+
+#4
+import matplotlib.pyplot as plt
+import numpy as np
+xpoints=np.array([3,6,9,12])
+ypoints=np.array([2,8,1,10])
+plt.plot(xpoints,ypoints, marker='D')
+plt.show()
+
+#5
+import matplotlib.pyplot as plt
+import numpy as np
+xpoints=np.array([0,1,2,3,4,5])
+ypoints=np.array([2,4,6,14,10,12])
+plt.plot(xpoints,ypoints,'D--r',ms=10, mec='g', mfc='g')
+plt.show()
