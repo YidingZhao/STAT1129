@@ -17,10 +17,11 @@ x=np.random.normal(0,0.2,800)
 plt.hist(x)
 plt.show()
 
-fruit_list=["Apples", "Bananas", "Cherries", "Dates"]
-count_list=[45,25, 15, 20]
-print(fruit_list)
-print(count_list)
+mydic = {"Apples": 45, "Bananas":25, "Cherries":15, "Dates":20}
+keys=list(mydic.keys())
+print(keys)
+values=list(mydic.values())
+print(values)
 import matplotlib.pyplot as plt
 import numpy as np
 y=np.array([45,25,15,20])
