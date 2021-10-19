@@ -1,0 +1,75 @@
+import matplotlib.pyplot as plt
+import numpy as np
+x1=np.array([0,4])
+y1=np.array([1,4])
+y2=np.array([5,8])
+y3=np.array([9,12])
+plt.plot(x1,y1, linewidth='1')
+plt.plot(x1,y2, linewidth='1')
+plt.plot(x1,y3, linewidth='1')
+plt.xlabel('X Label')
+plt.ylabel('Y Label')
+plt.show()
+
+import matplotlib.pyplot as plt
+import numpy as np
+x=np.random.normal(0,0.2,800)
+plt.hist(x)
+plt.show()
+
+fruit_list=["Apples", "Bananas", "Cherries", "Dates"]
+count_list=[45,25, 15, 20]
+print(fruit_list)
+print(count_list)
+import matplotlib.pyplot as plt
+import numpy as np
+y=np.array([45,25,15,20])
+mydic = ["Apples", "Bananas", "Cherries", "Dates"]
+myexplode=[0.1,0.1,0.1,0.1]
+plt.pie(y,labels= mydic,explode=myexplode)
+plt.legend()
+plt.show()
+x=np.array(["Apples", "Bananas", "Cherries", "Dates"])
+plt.bar(x,y,width=0.8)
+plt.show()
+
+import matplotlib.pyplot as plt
+import numpy as np
+x=np.array([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+y=np.array([88, 92, 80, 89, 90, 80, 60, 88, 80, 84])
+plt.scatter(x,y,color='r')
+x=np.array([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+y=np.array([75, 59, 69, 48, 65, 56, 32, 45, 20, 30])
+plt.scatter(x,y,color='g')
+plt.xlabel('Marks Range')
+plt.ylabel('Marks Scored')
+category=["Art marks","Science marks"]
+plt.legend(labels=category)
+plt.title('Scatter Plot')
+plt.show()
+
+import matplotlib.pyplot as plt
+import numpy as np
+x=np.array([1, 1.5, 2, 5, 5, 6, 7, 8, 9, 9.5, 9.8,11,13,16])
+y=np.array([112,103,98,94,88,87,86,85.5,85.3,77,76,86,89,71])
+plt.subplot(1,4,1)
+plt.scatter(x,y)
+plt.title("scatter plot")
+x1=np.array([0,1,2,5])
+y1=np.array([3,8,1,7])
+x1=np.array([0,1,2,5])
+y1=np.array([6,3,5,11])
+plt.subplot(1,4,2)
+plt.plot(x1,y1,x2,y2)
+plt.title("multiple line plot")
+x = np.array(["A", "B", "C", "D"])
+y = np.array([3,5,8,10])
+plt.subplot(1,4,3)
+plt.bar(x,y)
+plt.title("bar chat")
+x=np.array([23,28,34,48])
+y=np.array([32,41,46,57])
+plt.subplot(1,4,4)
+plt.plot(x,y,marker='*')
+plt.title("line with marker")
+plt.show()
