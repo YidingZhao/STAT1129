@@ -1,0 +1,94 @@
+import turtle
+
+# set background color of turtle window as white
+turtle.bgcolor("white")
+# set tile of turtle window to The American Flag
+turtle.title("The American Flag")
+
+#define a function to draw a rectangle name draw_rectangle.
+def draw_rectangle(length, height, color, x = 0, y = 0):
+    turtle.speed(0)
+    turtle.fillcolor(color)
+    turtle.hideturtle()
+    turtle.up()
+    turtle.goto(x,y)
+    turtle.down()
+    turtle.begin_fill()
+    for i in range(2):
+        turtle.forward(length)
+        turtle.right(90)
+        turtle.forward(height)
+        turtle.right(90)
+    turtle.end_fill()
+    
+#define a function to draw a star named draw_star.    
+def draw_star(size, color, x = 0, y = 0):
+    turtle.speed(0)
+    turtle.pencolor(get_color("white"))
+    turtle.up()
+    turn = 144 
+    turtle.goto(x,y)
+    turtle.fillcolor(color)
+    turtle.hideturtle()
+    turtle.down()
+    turtle.begin_fill()
+    for i in range(5): #this is how to draw one star
+        turtle.forward(size)
+        turtle.right(turn) 
+    turtle.end_fill()
+
+#define a function to determine colors named get_color from a parameter color string.
+def get_color(color):
+    turtle.colormode(255) 
+    if color == "old_glory_red":
+        return 179,25,66
+    if color == "white":
+        return 255,255,255
+    if color == "old_glory_blue":
+        return 10,49,97
+    else:
+        return 0,0,0
+    
+#define function draw_flag to draw a flag of a certain 
+def draw_flag(height):
+    #A = height of the flag
+    height=float(height) 
+    #B = fly (width) of the flag
+    B = 1.9 * float(height)
+    #C = hoist (height) of the canton
+    C = height * (7/13)
+    #D = fly (width) of the canton
+    D = B * (2/5)
+    stripe = height / 13
+    star = float(round(stripe * (4/5),4)) #Diameter of star
+    E = C / 10  #E=F=C/10
+    G = D / 12  #G=H=D/12
+    color = get_color("old_glory_red")
+    draw_rectangle(B, height, color)
+
+    for i in range(13):
+        if i % 2==0:
+            color = get_color("old_glory_red")
+            draw_rectangle(B, stripe, color, 0 , -stripe * i) 
+        else:
+            color = get_color("white")
+            draw_rectangle(B, stripe, color, 0, -stripe * i)
+    color = get_color("old_glory_blue")
+    draw_rectangle(D, C, color)
+    
+    #draw stars in the canton
+    color = get_color("white")
+    for i in range(0,11,2):     #Number of rows with 6 stars in a row
+        for j in range(1,10,2): #A line with 6 stars
+            draw_star(star, color, (G/2)+G*i , -E * j )
+    for i in range(0,10,2):     #Number of rows with 5 stars in a row
+        for j in range(2,10,2): #A line with 5 stars
+            draw_star(star, color, G*(3/2)+G*i , -E * j)
+            
+def main(): 
+    draw_flag(200)
+    
+#call the four function above    
+
+if __name__ == "__main__":  
+    main()
