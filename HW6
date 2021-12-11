@@ -1,1 +1,19 @@
-
+m<-matrix (c(7,2,9,4,12,13), nrow=2,ncol=3)
+n<-matrix (c(1,2,3,7,8,9,12,13,14,19,20,21), nrow=3,ncol=4)
+m%*%n
+myorders=read.csv('All_Amazon_Orders.csv')
+head(myorders)
+Data_Orders<-myorders
+dim(Data_Orders)
+summary(Data_Orders)
+names(Data_Orders)
+myorders$Total.Charged <- gsub("[$]","",as.character(myorders$Total.Charged))
+myorders$Total.Charged<-as.numeric(myorders$Total.Charged)
+myorders$Total.Charged
+mean(myorders$Total.Charged)
+median(myorders$Total.Charged)
+max(myorders$Total.Charged)
+min(myorders$Total.Charged)
+sum(myorders$Total.Charged)
+mycolors = c('red','yellow','blue','green','orange','violet')
+with(myorders,plot(Order.Date, Total.Charged,col=mycolors,xlab="Order Date",ylab="Total Charged"))
